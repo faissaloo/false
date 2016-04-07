@@ -5,4 +5,9 @@ _start:
     ;Exit with code 1
     inc eax
     inc ebx
-    int 0x80
+    push _start
+    push ecx
+    push edx
+    push ebp
+    mov ebp, esp
+    sysenter
